@@ -33,7 +33,7 @@ const Shop = (props) => {
 		// console.log(product);
 		let text = 'Are you want to remove this product?';
 		if (window.confirm(text) == true) {
-			const rest = cart.filter((pd) => pd.id !== product.id);
+			const rest = carts.filter((pd) => pd.id !== product.id);
 			setCarts(rest);
 			removeFromDb(product.id);
 		} else {

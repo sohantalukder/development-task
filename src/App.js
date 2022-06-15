@@ -9,24 +9,24 @@ import Dashboard from './pages/Home/Dashboard';
 function App() {
 	return (
 		<div className="App">
-			<Router>
-				<AuthProvider>
+			<AuthProvider>
+				<Router>
 					<Switch>
-						<Route path="/login">
-							<Login />
-						</Route>
-						<Route path="/register">
-							<Register />
-						</Route>
 						<PrivateRoute exact path="/">
 							<Dashboard />
 						</PrivateRoute>
 						<PrivateRoute path="/dashboard">
 							<Dashboard />
 						</PrivateRoute>
+						<Route path="/login">
+							<Login />
+						</Route>
+						<Route path="/register">
+							<Register />
+						</Route>
 					</Switch>
-				</AuthProvider>
-			</Router>
+				</Router>
+			</AuthProvider>
 		</div>
 	);
 }
