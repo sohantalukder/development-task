@@ -1,0 +1,152 @@
+[
+	{
+		"id": 0,
+		"category": "Formal Shirts",
+		"name": "Pure White Polo",
+		"price": 43,
+		"image": "https://sc01.alicdn.com/kf/Ud931527bac614c58a750a7a91792dd5eB.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 1,
+		"category": "Formal Shirts",
+		"name": "Stylish Regular Slim Fit",
+		"price": 80,
+		"image": "https://static-01.daraz.com.bd/p/debdd9c7ef205ed97fb2a5a5148cb1f6.jpg",
+		"stock": 25,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 2,
+		"category": "Formal Shirts",
+		"name": "Maroon Cotton Formal Shirt",
+		"price": 120,
+		"image": "https://static-01.daraz.com.bd/p/8d627b32327d35330576db5c07b35ea0.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 3,
+		"category": "Casual Shirt",
+		"name": "Long Sleeve formal Shirt",
+		"price": 66,
+		"image": "https://static-01.daraz.com.bd/p/4e84ad198e3e5411bdaa59c3c0e4fe7d.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 4,
+		"category": "Polo T-Shirt",
+		"name": "Happiness Exclusive T-Shirts",
+		"price": 12,
+		"image": "https://static-01.daraz.com.bd/p/9411fa8408425ca6dcac6044244710e1.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 5,
+		"category": "Polo T-Shirt",
+		"name": "Printed Cotton T Shirt",
+		"price": 15,
+		"image": "https://static-01.daraz.com.bd/p/c158273f5d7465ecc55a41e7d4369b80.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 6,
+		"category": "Polo T-Shirt",
+		"name": "Black Cotton Half Sleeve T-shirt",
+		"price": 14,
+		"image": "https://static-01.daraz.com.bd/p/mdc/7afb5ca1c194e12e756f51038af03fd2.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 7,
+		"category": "Casual Shirts",
+		"name": "Black & White Check Shirt",
+		"price": 450,
+		"image": "https://static-01.daraz.com.bd/p/5a32d0e51410811735ea81c26eaed848.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 8,
+		"category": "Casual Shirts",
+		"name": "Denim Jeans Shirt",
+		"price": 225,
+		"image": "https://static-01.daraz.com.bd/p/1a8959a2617fc3c4a8cc1bd7331b2885.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 9,
+		"category": "Polo T-Shirt",
+		"name": "Cotton Short Sleeve T-Shirt",
+		"price": 43,
+		"image": "https://static-01.daraz.com.bd/p/a7faa81aabb0f0ba3601163058359dc9.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 10,
+		"category": "Casual Shirts",
+		"name": "Long Sleeve Casual Shirt",
+		"price": 162,
+		"image": "https://static-01.daraz.com.bd/p/1c6dcc6207b7695d28ae9c78e865ae1a.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 11,
+		"category": "Casual Shirts",
+		"name": "Long Sleeve Casual Shirt ",
+		"price": 175,
+		"image": "https://static-01.daraz.com.bd/p/455dd1a82d3d6c1e9f2fa5983d4a3fe1.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 12,
+		"category": "Polo Shirts",
+		"name": "Black Cotton polo",
+		"price": 199,
+		"image": "https://static-01.daraz.com.bd/p/ecc3cb2c01e86ac54e73027edde6c062.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 13,
+		"category": "Polo Shirts",
+		"name": "Pure White Polo",
+		"price": 299,
+		"image": "https://static-01.daraz.com.bd/p/098069b9d63e33d5597f009260309fc8.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	},
+	{
+		"id": 14,
+		"category": "Polo Shirts",
+		"name": "Orange Cotton polo",
+		"price": 245,
+		"image": "https://static-01.daraz.com.bd/p/7901d7111c1582c328a8ac147427f6b9.jpg",
+		"stock": 20,
+		"ratings": 4,
+		"quantity": 1
+	}
+]
