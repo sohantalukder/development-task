@@ -13,30 +13,10 @@ const CartItem = (props) => {
 
 	let [items, setItems] = useState(quantity);
 
-	let handleQuantityIncrease = () => {
-		setItems(quantity);
-		let newItems = items + 1;
-		setItems(newItems);
-		let newTotal = total + price;
-		total = newTotal;
-	};
-
-	let handleQuantityDecrease = () => {
-		if (items > 1) {
-			let newItems = items - 1;
-			setItems(newItems);
-			let newTotal = total - price;
-			total = newTotal;
-		} else {
-			setItems(1);
-			let newTotal = total;
-			total = newTotal;
-		}
-	};
-
 	return (
 		<div>
 			<table className="table-auto w-full space-x-1 ">
+				<thead></thead>
 				<tbody>
 					<tr>
 						<td>
@@ -44,7 +24,7 @@ const CartItem = (props) => {
 								<BiEdit className="text-xl text-darkGray" />
 							</button>
 						</td>
-						<td colspan="5" className=" border border-[#C9CED3] p-2 w-full ">
+						<td colSpan="5" className=" border border-[#C9CED3] p-2 w-full ">
 							<table className="w-full table-auto">
 								<tr>
 									<td className="whitespace-nowrap text-left">
@@ -57,11 +37,11 @@ const CartItem = (props) => {
 									<td className="whitespace-nowrap flex justify-center">
 										{' '}
 										<div className="flex items-center space-2 ">
-											<button onClick={handleQuantityDecrease}>
+											<button onClick={() => props.handleQuantityDecrease(id)}>
 												<AiFillMinusCircle className="text-xl text-darkGray" />
 											</button>
 											<p className="px-2 text-darkGray">{quantity}</p>
-											<button onClick={handleQuantityIncrease}>
+											<button onClick={() => props.handleQuantityIncrease(id)}>
 												<IoIosAddCircle className="text-xl text-darkGray" />
 											</button>
 										</div>

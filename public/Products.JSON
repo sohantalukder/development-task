@@ -11,7 +11,7 @@
 	},
 	{
 		"id": 1,
-		"category": "Formal Shirts",
+		"category": "Full Sleeve",
 		"name": "Stylish Regular Slim Fit",
 		"price": 80,
 		"image": "https://static-01.daraz.com.bd/p/debdd9c7ef205ed97fb2a5a5148cb1f6.jpg",
@@ -31,7 +31,7 @@
 	},
 	{
 		"id": 3,
-		"category": "Casual Shirt",
+		"category": "Full Shirt",
 		"name": "Long Sleeve formal Shirt",
 		"price": 66,
 		"image": "https://static-01.daraz.com.bd/p/4e84ad198e3e5411bdaa59c3c0e4fe7d.jpg",

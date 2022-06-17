@@ -4,7 +4,7 @@ import { BsCreditCard } from 'react-icons/bs';
 import { GiReceiveMoney } from 'react-icons/gi';
 import { HiOutlineCurrencyDollar } from 'react-icons/hi';
 import { MdOutlineCancel } from 'react-icons/md';
-import { NavLink, useRouteMatch } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import useCart from '../../../../CustomHooks/useCart';
 import useProducts from '../../../../CustomHooks/useProducts';
 const Payment = (props) => {
@@ -21,9 +21,9 @@ const Payment = (props) => {
 	const shipping = parseFloat((total * 0.01).toFixed(2));
 	const discount = parseFloat((total * 0.05).toFixed(2));
 	const grandTotal = total + shipping + tax - discount;
-	let { path, url } = useRouteMatch();
+
 	return (
-		<div className="p-8">
+		<div className="px-4 py-8 md:p-8">
 			<div className="px-8 py-4 flex justify-between items-center border border-darkGray rounded-sm">
 				<h2 className="md:text-2xl text-xl text-darkGray">Order Amount</h2>
 				<h2 className="md:text-2xl text-xl text-darkGray font-semibold">
@@ -98,8 +98,9 @@ const Payment = (props) => {
 							<MdOutlineCancel />
 							<span>Cancel</span>
 						</button>
-						<button className="flex space-x-1 px-4 py-2 bg-blue text-white rounded-sm items-center">
-							<GiReceiveMoney /> <span>Complete Payment</span>
+						<button className="flex space-x-1 px-2 sm:px-4 py-2 bg-blue text-white rounded-sm items-center">
+							<GiReceiveMoney className=" hidden sm:block" />{' '}
+							<span>Complete Payment</span>
 						</button>
 					</div>
 				</div>

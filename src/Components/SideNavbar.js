@@ -15,7 +15,7 @@ const SideNavbar = (props) => {
 	return (
 		<div className="w-full absolute left-0">
 			<div
-				className={` bg-dark-purple h-screen    duration-300 w-72 md:w-96 z-20 bg-white relative`}>
+				className={` bg-dark-purple h-screen    duration-300 max-w-[80%] w-72 md:w-96 z-20 bg-white fixed`}>
 				<div className="bg-[#EFEFEF] pt-8 px-6">
 					<h1 className="text-black text-center font-bold text-2xl tracking-wide pb-6">
 						go<span className="text-green ">B</span>illing
@@ -75,7 +75,7 @@ const SideNavbar = (props) => {
 
 			<div
 				onClick={() => props.setOpenSidebar(false)}
-				className="h-screen flex-1 p-7 bg-[#BCBFC2] opacity-80 w-full z-10 absolute left-0 bottom-0"></div>
+				className="h-screen flex-1 p-7 bg-[#BCBFC2] opacity-80 w-full z-10 fixed left-0 bottom-0"></div>
 		</div>
 	);
 };

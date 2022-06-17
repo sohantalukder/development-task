@@ -12,7 +12,6 @@ import CartItem from '../../../Components/CartItem';
 import useAuth from '../../../CustomHooks/useAuth';
 import useCart from '../../../CustomHooks/useCart';
 import useProducts from '../../../CustomHooks/useProducts';
-import { removeFromDb } from '../../../utilities/fakedb';
 const Shop = (props) => {
 	const { user } = useAuth();
 	const [products, setProducts] = useProducts();
@@ -27,19 +26,7 @@ const Shop = (props) => {
 	const tax = parseFloat((total * 0.1).toFixed(2));
 	const shipping = parseFloat((total * 0.01).toFixed(2));
 	const discount = parseFloat((total * 0.05).toFixed(2));
-	const grandTotal = total + shipping + tax - discount;
-	// Remove Product
-	const handleRemoveProduct = (product) => {
-		// console.log(product);
-		let text = 'Are you want to remove this product?';
-		if (window.confirm(text) == true) {
-			const rest = carts.filter((pd) => pd.id !== product.id);
-			setCarts(rest);
-			removeFromDb(product.id);
-		} else {
-			setCarts(product);
-		}
-	};
+	const grandTotal = (total + shipping + tax - discount).toFixed(2);
 
 	return (
 		<div className="">
@@ -84,12 +71,14 @@ const Shop = (props) => {
 					/>
 				</button>
 			</div>
-			<div className="py-2">
+			<div className="py-2 max-w-full overflow-y-auto">
 				{cart.map((shoppingItem) => (
 					<CartItem
 						key={shoppingItem.id}
 						shoppingItem={shoppingItem}
-						handleRemoveProduct={handleRemoveProduct}
+						handleRemoveProduct={props.handleRemoveProduct}
+						handleQuantityIncrease={props.handleQuantityIncrease}
+						handleQuantityDecrease={props.handleQuantityDecrease}
 					/>
 				))}
 				{/* <CartItem /> */}
@@ -139,8 +128,10 @@ const Shop = (props) => {
 				<button
 					title="Pay Now"
 					className="flex items-center text-lg md:text-2xl font-medium text-blue rounded-md px-4 py-2  space-x-2 bg-[#DEE1F3]"
-					onClick={() => props.setTotalPayment(grandTotal)}
-					onClick={() => props.setOpenPayments(false)}>
+					onClick={() => {
+						props.setTotalPayment(grandTotal);
+						props.setOpenPayments(false);
+					}}>
 					<GiReceiveMoney className="text-xl lg:text-3xl" />
 					<span>Pay Now</span>
 				</button>

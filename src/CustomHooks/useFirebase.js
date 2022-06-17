@@ -1,7 +1,6 @@
 import {
 	createUserWithEmailAndPassword,
 	getAuth,
-	getIdToken,
 	onAuthStateChanged,
 	signInWithEmailAndPassword,
 	signOut,
@@ -16,9 +15,8 @@ const useFirebase = () => {
 	const [user, setUser] = useState({});
 	const [authError, setAuthError] = useState('');
 	const [success, setSuccess] = useState(false);
-	const [token, setToken] = useState('');
 	const auth = getAuth();
-
+	// console.log(user);
 	const registerUser = (name, email, contact, password, history, location) => {
 		createUserWithEmailAndPassword(auth, email, password)
 			.then((userCredential) => {
@@ -73,10 +71,6 @@ const useFirebase = () => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			if (user) {
 				setUser(user);
-				getIdToken(user).then((idToken) => {
-					setToken(idToken);
-				});
-				// ...
 			} else {
 				setUser({});
 			}
@@ -102,15 +96,11 @@ const useFirebase = () => {
 
 	return {
 		user,
-
 		registerUser,
 		loginUser,
-		token,
 		authError,
 		isLoading,
-
 		logout,
-
 		success,
 	};
 };

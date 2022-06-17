@@ -6,8 +6,9 @@ const Products = (props) => {
 	const products = props.products;
 	const [category, setCategory] = useState(['']);
 	const [search, setSearch] = useState('');
+	const [categoryTerm, setCategoryTerm] = useState('');
+	const newCategory = [...new Set(category)];
 
-	// console.log(products);
 	useEffect(() => {
 		const allCategories = [];
 		// console.log(allCategories);
@@ -20,11 +21,6 @@ const Products = (props) => {
 		});
 	}, [products]);
 
-	const handleChange = (event) => {
-		setSearch(event.target.value);
-	};
-	// Handle Search
-
 	return (
 		<div>
 			{/* Search Bar */}
@@ -35,47 +31,71 @@ const Products = (props) => {
 						type="text"
 						placeholder="Search Using Products Name"
 						className="w-full focus:outline-none"
-						onChange={handleChange}
+						onChange={(e) => {
+							setSearch(e.target.value);
+						}}
 					/>
 					<BsUpcScan className="text-darkGray text-2xl" />
 				</form>
 			</div>
 			{/* Category */}
-			<div className="flex items-center justify-between my-3 ">
-				<div className="flex space-x-4 items-center">
-					<button
-						title="All Products"
-						className="rounded-md border-2 border-blue text-blue px-2 py-1 font-semibold">
-						All Products
-					</button>
-					<div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-						{products ? (
-							category.slice(0, 5).map((item) => (
-								<button
-									title={item}
-									className="rounded-md border-2 border-darkGray text-darkGray px-2 py-1 font-semibold">
-									{item}
-								</button>
-							))
-						) : (
-							<button></button>
-						)}
-					</div>
-					<button className="space-y-1 flex flex-col">
-						<span className="p-1 bg-darkGray rounded-full"></span>
-						<span className="p-1 bg-darkGray rounded-full"></span>
-						<span className="p-1 bg-darkGray rounded-full"></span>
-					</button>
-				</div>
+			<div className="flex space-x-4 items-center my-3 justify-between flex-wrap lg:flex-nowrap mx-3 gap-5">
+				<button
+					title="All Products"
+					className="rounded-md border-2 border-blue text-blue px-2 py-1 font-semibold"
+					onClick={(e) => {
+						setCategoryTerm('');
+					}}>
+					All Products
+				</button>
+				{products ? (
+					newCategory.slice(0, 5).map((item) => (
+						<button
+							title={item}
+							onClick={(e) => {
+								setCategoryTerm(item);
+							}}
+							className="rounded-md border-2 border-darkGray text-darkGray px-2 py-1 font-semibold">
+							{item}
+						</button>
+					))
+				) : (
+					<button></button>
+				)}
+				<button className="space-y-1 flex-col hidden md:flex">
+					<span className="p-0.5 bg-darkGray rounded-full"></span>
+					<span className="p-0.5 bg-darkGray rounded-full"></span>
+					<span className="p-0.5 bg-darkGray rounded-full"></span>
+				</button>
 			</div>
-			<div className="my-3 grid grid-cols-2 md:grid-cols-5 lg:gris-cols-5 gap-6">
-				{products.map((product) => (
-					<Product
-						key={product.id}
-						product={product}
-						handleAddToCart={props.handleAddToCart}
-					/>
-				))}
+			<div className="my-3 grid grid-cols-2 md:grid-cols-5 lg:gris-cols-5 gap-6  px-4 xl:px-0">
+				{products
+					.filter((val) => {
+						if (search == '') {
+							if (categoryTerm == '') {
+								return val;
+							} else if (
+								val.category.toLowerCase().includes(categoryTerm.toLowerCase())
+							) {
+								return val;
+							}
+						} else if (val.name.toLowerCase().includes(search.toLowerCase())) {
+							if (categoryTerm == '') {
+								return val;
+							} else if (
+								val.category.toLowerCase().includes(categoryTerm.toLowerCase())
+							) {
+								return val;
+							}
+						}
+					})
+					.map((product) => (
+						<Product
+							key={product.id}
+							product={product}
+							handleAddToCart={props.handleAddToCart}
+						/>
+					))}
 			</div>
 		</div>
 	);
